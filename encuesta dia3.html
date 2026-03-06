@@ -1,0 +1,120 @@
+<doctype>
+<head>
+
+    <title>Preguntas</title>
+</head>
+<body onload="tiempolimite()">
+    <h1>Escribe tu respuesta antes de que acabe el tiempo</h1>
+   <h1 id="cuenta regrasiva">30</h1>
+    <br><br>
+    <audio id="cantico">
+       <source src="audio/143.mp3.mp3" type="audio/mpeg">
+
+    </audio>
+    <h2>¿Cuantos libros tiene la Biblia?</h2>
+   <br>
+   <input type="text" id="Respuestas1">
+   <br><br>
+  <h2>¿Cuantos la escribieron?</h2>
+   <br>
+   <input type="text" id="Respuestas2">
+   <br><br>
+  <h2>¿En cuantos idiomas se escribio?</h2>
+   <br>
+   <input type="text" id="Respuestas3">
+   <br><br>
+  <h2>¿Que es el pentateuco?</h2>
+   <br>
+   <input type="text" id="Respuestas4">
+   <br><br>
+  <h2>¿Quien escribio los primeros 5 librios?</h2>
+   <br>
+   <input type="text" id="Respuestas5">
+   <br><br>
+
+   <button onclick="verrespuestas()">Finalizar</button>
+  <button onclick="Reinicia()">Reiniciar</button>
+
+<script>
+
+const elementocantico= document.getElementById("cantico");
+ 
+let elemento1= document.getElementById("Respuestas1");
+
+   
+ 
+ function tiempolimite(){
+ inicio=setTimeout(Tictac,1000*30)
+intervalo= setInterval (terminar,1000);
+ document.getElementById("cuenta regrasiva").textContent=30;
+    }
+    function terminar(){
+   let tiempo = document.getElementById("cuenta regrasiva").textContent;
+   document.getElementById("cuenta regrasiva").textContent=tiempo -1;
+
+  if(tiempo <= 1){
+  clearInterval(intervalo);
+  clearTimeout(inicio);
+}
+  
+  
+      }
+function verrespuestas(){
+   let elemento1= document.getElementById("Respuestas1").value;
+   
+   
+   
+   let elemento2= document.getElementById("Respuestas2").value;
+   
+   
+
+    let elemento3= document.getElementById("Respuestas3").value;
+   
+   
+
+    let elemento4= document.getElementById("Respuestas4").value;
+   
+
+    let elemento5= document.getElementById("Respuestas5").value;
+   
+    let tiempoactual = new Date();
+
+   let hoy = new Date();
+let dia =String (hoy.getDate()).padStart(2, '0');
+let mes = String(hoy.getMonth ()+ 1).padStart(2, '0'); 
+let anio = hoy.getFullYear();
+
+let fechaFormateada = dia + '/' + mes + '/' + anio;
+
+
+
+   alert("Respuesta 1: " + elemento1 + 
+   "\nRespuesta 2: " + elemento2 +
+   "\nRespuesta 3: " + elemento3 +
+   "\nRespuesta 4: " + elemento4 +
+   "\nRespuesta 5: " + elemento5 +
+   "\nhoy es " + fechaFormateada
+  
+   );
+      }
+       
+      
+      
+      function Tictac(){
+   elementocantico.play();
+    alert("GAME OVER");
+   
+    
+        }
+
+
+function Reinicia(){
+ location.reload();
+   }
+
+
+</script>
+
+</body>
+
+</doctype>
