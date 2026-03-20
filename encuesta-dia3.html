@@ -1,0 +1,174 @@
+<!Doctype html>
+
+<html lang="es">
+   <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preguntas</title>
+</head>
+<body onload="tiempolimite()">
+   
+   <header>
+  
+   <h1>Escribe tu respuesta antes de que acabe el tiempo</h1>
+   
+   
+    <h1 id="cuenta-regrasiva">30</h1>
+
+   </header>
+   
+    <br><br>
+    <audio id="cantico">
+       <source src="audio/143.mp3.mp3" type="audio/mpeg">
+    
+    
+     
+    </audio>
+    
+
+        <main>
+         <section id="preguntas">
+      <h2>Preguntas</h2>
+     
+     
+      <article class="pregunta">
+         <h3>Pregunta 1</h3>
+    <p>¿Cuantos libros tiene la Biblia?</p>
+   <br> 
+   <input type="text" id="Respuestas-1">
+   <br><br> </article>
+   
+   
+   <article class="pregunta"> 
+      <h3>Pregunta 2</h3>
+   <p>¿En Cuantos años se escribio la Biblia?</p>
+   <br> 
+   <input type="text" id="Respuestas-2">
+   <br><br></article>
+  
+  
+  
+   <article class="pregunta">
+      <h3>Pregunta 3</h3>
+        <p>¿En cuantos idiomas se escribio?</p>
+   <br> 
+   <input type="text" id="Respuestas-3">
+   <br><br></article>
+
+  
+   <article class="pregunta">
+      <h3>Pregunta 4</h3>
+  <p>¿Que es el pentateuco?</p>
+   <br> 
+   <input type="text" id="Respuestas-4">
+   <br><br></article>
+
+  
+  
+  
+   <article class="pregunta">
+      <h3>Pregunta 5</h3>
+  <p>¿Quien escribio los primeros 5 librios?</p>
+   <br> 
+   <input type="text" id="Respuestas-5">
+  <br><br></article>
+   
+</section>
+     
+</main> 
+
+    
+   
+   
+     <button type="submit" onclick="submit()">Finalizar</button>
+  <button onclick="Reinicia()">Reiniciar</button>
+
+
+  <button id="btn-enviar">Enviar</button>
+
+  <footer>Hecho por Obed Torres-2026</footer>
+
+
+<script>
+
+const elementocantico= document.getElementById("cantico");
+ 
+let elemento1= document.getElementById("Respuestas1");
+
+   document.querySelector('#btn-enviar').addEventListener('click', verificar);
+ 
+ function tiempolimite(){
+ inicio=setTimeout(Tictac,1000*30)
+intervalo= setInterval (terminar,1000);
+ document.getElementById("cuenta regrasiva").textContent=30;
+    }
+    function terminar(){
+   let tiempo = document.getElementById("cuenta regrasiva").textContent;
+   document.getElementById("cuenta regrasiva").textContent=tiempo -1;
+
+  if(tiempo <= 1){
+  clearInterval(intervalo);
+  clearTimeout(inicio);
+}
+  
+  
+      }
+function submit(){
+   let elemento1= document.getElementById("Respuestas-1").value;
+   
+   
+   
+   let elemento2= document.getElementById("Respuestas-2").value;
+   
+   
+
+    let elemento3= document.getElementById("Respuestas-3").value;
+   
+   
+
+    let elemento4= document.getElementById("Respuestas-4").value;
+   
+
+    let elemento5= document.getElementById("Respuestas-5").value;
+   
+    let tiempoactual = new Date();
+
+   let hoy = new Date();
+let dia =String (hoy.getDate()).padStart(2, '0');
+let mes = String(hoy.getMonth ()+ 1).padStart(2, '0'); 
+let anio = hoy.getFullYear();
+
+let fechaFormateada = dia + '/' + mes + '/' + anio;
+
+
+
+   alert("Respuesta 1: " + elemento1 + 
+   "\nRespuesta 2: " + elemento2 +
+   "\nRespuesta 3: " + elemento3 +
+   "\nRespuesta 4: " + elemento4 +
+   "\nRespuesta 5: " + elemento5 +
+   "\nhoy es " + fechaFormateada
+  
+   );
+      }
+       
+      
+      
+      function Tictac(){
+   elementocantico.play();
+    alert("GAME OVER");
+   
+    
+        }
+
+
+function Reinicia(){
+ location.reload();
+   }
+
+
+</script>
+
+</body>
+
+</doctype>
