@@ -1,12 +1,13 @@
-<!Doctype html>
+<!doctype html>
 
 <html lang="es">
    <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Preguntas</title>
+    <link rel="stylesheet" href="estilos.css">
 </head>
-<body onload="tiempolimite()">
+<body >
    
    <header>
   
@@ -17,9 +18,9 @@
 
    </header>
    
-    <br><br>
+    
     <audio id="cantico">
-       <source src="audio/143.mp3.mp3" type="audio/mpeg">
+       <source src="audio/143.mp3" type="audio/mpeg">
     
     
      
@@ -27,41 +28,41 @@
     
 
         <main>
-         <section id="preguntas">
+         <section class="preguntas-1">
       <h2>Preguntas</h2>
-     
+     </section>
      
       <article class="pregunta">
          <h3>Pregunta 1</h3>
     <p>¿Cuantos libros tiene la Biblia?</p>
-   <br> 
+  
    <input type="text" id="Respuestas-1">
-   <br><br> </article>
+    </article>
    
    
    <article class="pregunta"> 
       <h3>Pregunta 2</h3>
    <p>¿En Cuantos años se escribio la Biblia?</p>
-   <br> 
+  
    <input type="text" id="Respuestas-2">
-   <br><br></article>
+   </article>
   
   
   
    <article class="pregunta">
       <h3>Pregunta 3</h3>
         <p>¿En cuantos idiomas se escribio?</p>
-   <br> 
+    
    <input type="text" id="Respuestas-3">
-   <br><br></article>
+   </article>
 
   
    <article class="pregunta">
       <h3>Pregunta 4</h3>
   <p>¿Que es el pentateuco?</p>
-   <br> 
+    
    <input type="text" id="Respuestas-4">
-   <br><br></article>
+   </article>
 
   
   
@@ -69,51 +70,58 @@
    <article class="pregunta">
       <h3>Pregunta 5</h3>
   <p>¿Quien escribio los primeros 5 librios?</p>
-   <br> 
+    
    <input type="text" id="Respuestas-5">
-  <br><br></article>
+  </article>
    
-</section>
+
      
 </main> 
 
     
+   <div class="botones">
    
-   
-     <button type="submit" onclick="submit()">Finalizar</button>
+     <button type="submit" onclick="Enviarrespuestas()">Finalizar</button>
   <button onclick="Reinicia()">Reiniciar</button>
 
 
-  <button id="btn-enviar">Enviar</button>
-
+  
+</div>
   <footer>Hecho por Obed Torres-2026</footer>
 
 
 <script>
 
+document.addEventListener('DOMContentLoaded', tiempolimite);
+
 const elementocantico= document.getElementById("cantico");
  
-let elemento1= document.getElementById("Respuestas1");
+let elemento1= document.getElementById("Respuestas-1");
 
-   document.querySelector('#btn-enviar').addEventListener('click', verificar);
+  
  
+ let inicio;
+ let intervalo;
+
+
+
  function tiempolimite(){
- inicio=setTimeout(Tictac,1000*30)
+inicio=setTimeout(Tictac,1000*30)
 intervalo= setInterval (terminar,1000);
- document.getElementById("cuenta regrasiva").textContent=30;
+ document.getElementById("cuenta-regrasiva").textContent=30;
     }
     function terminar(){
-   let tiempo = document.getElementById("cuenta regrasiva").textContent;
-   document.getElementById("cuenta regrasiva").textContent=tiempo -1;
+   let tiempo = document.getElementById("cuenta-regrasiva").textContent;
+   document.getElementById("cuenta-regrasiva").textContent=tiempo -1;
 
-  if(tiempo <= 1){
+  if(tiempo <= "1"){
   clearInterval(intervalo);
   clearTimeout(inicio);
 }
   
   
       }
-function submit(){
+function Enviarrespuestas(){
    let elemento1= document.getElementById("Respuestas-1").value;
    
    
@@ -170,5 +178,3 @@ function Reinicia(){
 </script>
 
 </body>
-
-</doctype>
