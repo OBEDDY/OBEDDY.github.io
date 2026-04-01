@@ -3,8 +3,9 @@ header{
 
     background-color: #ffffff;
     color:  #1f2937;
-    padding 16px;
+    padding: 1px;
     text-align: center;
+    border-radius: 15px;
 }
 
 .pregunta{
@@ -13,10 +14,9 @@ header{
 
     }
     .preguntas-1:hover{
-    background: red;
-    color          :  #1f2937;
-    margin: 18px;
-    padding: 10px;
+   color          :  #01fd49;
+    margin: auto;
+    padding: auto;
     
     }
 
@@ -25,7 +25,7 @@ header{
   text-align: center;
 
 
-  background-color: #1e90ff;
+  background-color: #003278;
   color: #ffffff;
  
  border-radius: 99px ;
@@ -53,6 +53,16 @@ p {
  padding: auto;
   }
   input{
-    margin: 16px;
-    padding: 10px;
+    margin: 5px;
+    padding: 1px;
+    }
+    form{
+      background-color: #003278;
+      color: #ffffff;
+      margin: auto;
+      padding: auto;
+   border-radius: 15PX ;
+   text-align: center;
+   box-decoration-break: clone;
+   box-shadow: 0 8px 20px rgba(105, 1, 1, 0.975);
     }
