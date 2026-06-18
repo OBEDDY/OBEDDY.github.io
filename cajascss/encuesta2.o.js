@@ -28,9 +28,9 @@ export const contenedor = document.querySelector("#contenedor-preguntas");
 
 preguntas.forEach((pregunta, index) => {
  const div = document.createElement("div");
-  div.classList.add('pregunta');
+  div.classList.add('pregunta', `pregunta-${index + 1}`);
   div.innerHTML = `
-  <article class="pregunta"> 
+  <article class="pregunta pregunta-${index + 1}"> 
     <h3>Pregunta ${index + 1}</h3>
     
     <p>${pregunta.texto}</p>
