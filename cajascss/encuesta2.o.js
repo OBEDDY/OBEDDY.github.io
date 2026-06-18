@@ -14,23 +14,36 @@ class Pregunta {
 }
 
 export const preguntas = [
-  new Pregunta(
-    "¿Cuántos libros tiene la Biblia?", 
-    "66"
-  ),
-  new Pregunta("¿En cuántos años se escribió la Biblia?", "1600"),
-  new Pregunta("¿En cuántos idiomas se escribió?", "3"),
+  new Pregunta("¿Cuántos libros tiene la Biblia?", "66"),
+  new Pregunta("¿Cuántos libros tiene el Antiguo Testamento?", "39"),
+  new Pregunta("¿Cuántos libros tiene el Nuevo Testamento?", "27"),
+  new Pregunta("¿Cuál es el primer libro de la Biblia?", "Génesis"),
+  new Pregunta("¿Cuál es el último libro de la Biblia?", "Apocalipsis"),
+  new Pregunta("¿Quién construyó el arca?", "Noé"),
+  new Pregunta("¿Cuántos días creó Dios el mundo?", "6"),
+  new Pregunta("¿En qué día descansó Dios?", "7"),
+  new Pregunta("¿Quién fue el primer hombre?", "Adán"),
+  new Pregunta("¿Quién escribió los primeros 5 libros?", "Moisés"),
 ];
 
+function shuffleArray(arr) {
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  return arr;
+}
 
+shuffleArray(preguntas);
 
 export const contenedor = document.querySelector("#contenedor-preguntas");
 
 preguntas.forEach((pregunta, index) => {
+  const estiloIndex = (index % 5) + 1;
  const div = document.createElement("div");
-  div.classList.add('pregunta', `pregunta-${index + 1}`);
+  div.classList.add('pregunta', `pregunta-${estiloIndex}`);
   div.innerHTML = `
-  <article class="pregunta pregunta-${index + 1}"> 
+  <article class="pregunta pregunta-${estiloIndex}"> 
     <h3>Pregunta ${index + 1}</h3>
     
     <p>${pregunta.texto}</p>
