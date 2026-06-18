@@ -35,25 +35,26 @@
      </section>
      
       <article class="pregunta">
-         <h3>Pregunta 1</h3>
-    <p>¿Cuantos libros tiene la Biblia?</p>
+         <h3 for="Respuestas-1">Pregunta 1</h3>
+    <label for="Respuestas-1">¿Cuantos libros tiene la Biblia?</label>
   
    <input type="text" id="Respuestas-1">
-    </article>
+  </article>
+
    
    
-   <article class="pregunta"> 
+   <article class= "pregunta"> 
       <h3>Pregunta 2</h3>
-   <p>¿En Cuantos años se escribio la Biblia?</p>
+   <label for="Respuestas-2">¿En Cuantos años se escriio la Biblia?</label>
   
-   <input type="text" id="Respuestas-2">
+   <input id="Respuestas-2">
    </article>
   
   
   
    <article class="pregunta">
       <h3>Pregunta 3</h3>
-        <p>¿En cuantos idiomas se escribio?</p>
+        <label for="Respuestas-3">¿En cuantos idiomas se escribio?</label>
     
    <input type="text" id="Respuestas-3">
    </article>
@@ -61,7 +62,7 @@
   
    <article class="pregunta">
       <h3>Pregunta 4</h3>
-  <p>¿Que es el pentateuco?</p>
+  <label for="Respuestas-4">¿Que es el pentateuco?</label>
     
    <input type="text" id="Respuestas-4">
    </article>
@@ -71,7 +72,7 @@
   
    <article class="pregunta">
       <h3>Pregunta 5</h3>
-  <p>¿Quien escribio los primeros 5 librios?</p>
+  <label for="Respuestas-5">¿Quien escribio los primeros 5 librios?</label>
     
    <input type="text" id="Respuestas-5">
   </article>
@@ -108,7 +109,7 @@ let elemento1= document.getElementById("Respuestas-1");
 
 
  function tiempolimite(){
-inicio=setTimeout(Tictac,1000*30)
+ inicio=setTimeout(Tictac,1000*30)
 intervalo= setInterval (terminar,1000);
  document.getElementById("cuenta-regrasiva").textContent=30;
     }
@@ -174,9 +175,6 @@ let fechaFormateada = dia + '/' + mes + '/' + anio;
 
 function Reinicia(){
  location.reload();
-   }
-
-
-</script>
+   }</script>
 
 </body>

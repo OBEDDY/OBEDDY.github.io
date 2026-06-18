@@ -8,13 +8,30 @@ header{
     border-radius: 15px;
 }
 
-.pregunta{
- background-color: #ffffff;
-    color:  #1f2937;
+#contenedor-preguntas {
+  background-color: rgb(0, 11, 59);
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  padding: 1px;
+margin: 1px;
 
-    }
-    .preguntas-1:hover{
-   color          :  #01fd49;
+}
+#timer{
+  background-color: #000000;
+font-family:Verdana, Geneva, Tahoma, sans-serif;
+margin: 10px;
+padding: 20px;
+  }
+.pregunta {
+background-color: #6aa7fc;
+margin: 1px;
+padding: 5px;
+color: rgb(0, 0, 0);  
+  }
+
+    .pregunta h3{
+   color          :  #6b56e0;
     margin: auto;
     padding: auto;
     
@@ -25,10 +42,10 @@ header{
   text-align: center;
 
 
-  background-color: #003278;
+  background-color: #6aa7fc;
   color: #ffffff;
- 
- border-radius: 99px ;
+ margin: .5px;
+ border-radius: 9px ;
   padding: 0.75rem 1.5rem;
   box-shadow: 0 8px 20px rgba(30, 144, 255, 0.25);
 
@@ -58,13 +75,15 @@ label {
 align-items: center;
   
     }
-    body{
-      background-color: #003278;
+    form{
+      background-color: #000000;
       color: #ffffff;
-      margin: auto;
-      padding: auto;
+      margin:1px;
+      padding: 1px;
    border-radius: 15PX ;
    text-align: center;
    box-decoration-break: clone;
    box-shadow: 0 8px 20px rgba(105, 1, 1, 0.975);
+   gap: 1px;
+
     }
