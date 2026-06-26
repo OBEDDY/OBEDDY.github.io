@@ -85,8 +85,7 @@ function verificarRespuestas(event) {
 
 
 const boton = document.querySelector('#btn-enviar');
-boton.addEventListener('click', () => {
-
+boton.addEventListener('click', (event) => {
   verificarRespuestas(event);
   console.log('Botón clickeado');
 });
@@ -94,17 +93,17 @@ boton.addEventListener('click', () => {
 
 
 // variable para ubicar en el html el contador limite.
-let tiempo = document.querySelector("#cuenta-regresiva");
+const tiempo = document.querySelector("#cuenta-regresiva");
  
- let inicio;
- let intervalo;
+ let inicio = setTimeout (Tictac,1000*30)
+ let intervalo = setInterval (terminar,1000);
 //Mostrar array en Html
 
 
 // funcion para el contador 
  function tiempolimite(){
- inicio=setTimeout(Tictac,1000*30)
-intervalo= setInterval (terminar,1000);
+ inicio;
+ intervalo;
  document.querySelector("#cuenta-regresiva").textContent=30;
     }
     function terminar(){
