@@ -1,15 +1,23 @@
 // ── CUENTA REGRESIVA ──
 function actualizarContador() {
-  const boda  = new Date('2026-11-29T18:00:00');
+  const boda  = new Date('2026-11-29T18:00:00-06:00');
   const ahora = new Date();
   const diff  = boda - ahora;
-
-  if (diff <= 0) return;
 
   const dias    = Math.floor(diff / (1000 * 60 * 60 * 24));
   const horas   = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
   const minutos = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
   const segs    = Math.floor((diff % (1000 * 60)) / 1000);
+
+  if (diff <= 0) {
+    document.querySelector('#cd-dias').textContent     = '00';
+    document.querySelector('#cd-horas').textContent    = '00';
+    document.querySelector('#cd-minutos').textContent  = '00';
+    document.querySelector('#cd-segundos').textContent = '00';
+    document.querySelector('.countdown-section .section-title').textContent = '¡Ya es el gran día!';
+    clearInterval(intervalo);
+    return;
+  }
 
   document.querySelector('#cd-dias').textContent     = String(dias).padStart(2, '0');
   document.querySelector('#cd-horas').textContent    = String(horas).padStart(2, '0');
@@ -18,10 +26,12 @@ function actualizarContador() {
 }
 
 actualizarContador();
-setInterval(actualizarContador, 1000);
+const intervalo = setInterval(actualizarContador, 1000);
 
 
 // ── SCROLL REVEAL ──
+document.documentElement.classList.add('reveal-ready');
+
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) entry.target.classList.add('visible');
@@ -32,11 +42,13 @@ document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
 
 // ── RSVP RADIOS ──
-function selectRadio(val) {
-  document.querySelector('#radio-si').classList.remove('selected');
-  document.querySelector('#radio-no').classList.remove('selected');
-  document.querySelector('#radio-' + val).classList.add('selected');
-}
+document.querySelectorAll('.rsvp-radio').forEach(el => {
+  el.addEventListener('click', function() {
+    document.querySelectorAll('.rsvp-radio').forEach(r => r.classList.remove('selected'));
+    this.classList.add('selected');
+    this.querySelector('input').checked = true;
+  });
+});
 
 
 // ── RSVP SUBMIT ──
@@ -44,4 +56,11 @@ document.querySelector('#rsvp-form').addEventListener('submit', function(e) {
   e.preventDefault();
   this.style.display = 'none';
   document.querySelector('#rsvp-success').style.display = 'block';
+});
+
+document.querySelector('#rsvp-success').addEventListener('click', function() {
+  this.style.display = 'none';
+  document.querySelector('#rsvp-form').style.display = 'grid';
+  document.querySelector('#rsvp-form').reset();
+  document.querySelectorAll('.rsvp-radio').forEach(r => r.classList.remove('selected'));
 });

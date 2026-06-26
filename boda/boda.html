@@ -252,12 +252,12 @@
   <form class="rsvp-form reveal" id="rsvp-form">
     <div class="rsvp-field">
       <label class="rsvp-label">Nombre completo</label>
-      <input class="rsvp-input" type="text" placeholder="Tu nombre" required>
+      <input class="rsvp-input" type="text" name="nombre" placeholder="Tu nombre" required>
     </div>
 
     <div class="rsvp-field">
       <label class="rsvp-label">Número de acompañantes</label>
-      <select class="rsvp-select">
+      <select class="rsvp-select" name="acompanantes">
         <option value="">Selecciona</option>
         <option>Solo yo (1)</option>
         <option>2 personas</option>
@@ -270,10 +270,10 @@
     <div class="rsvp-field">
       <label class="rsvp-label">¿Confirmas tu asistencia?</label>
       <div class="rsvp-radios">
-        <label class="rsvp-radio" id="radio-si" onclick="selectRadio('si')">
+        <label class="rsvp-radio" id="radio-si">
           <input type="radio" name="asistencia" value="si"> ♥ Sí, estaré ahí
         </label>
-        <label class="rsvp-radio" id="radio-no" onclick="selectRadio('no')">
+        <label class="rsvp-radio" id="radio-no">
           <input type="radio" name="asistencia" value="no"> Lo siento, no podré
         </label>
       </div>
@@ -281,7 +281,7 @@
 
     <div class="rsvp-field">
       <label class="rsvp-label">Mensaje para los novios (opcional)</label>
-      <textarea class="rsvp-textarea" placeholder="Escríbeles algo especial..."></textarea>
+      <textarea class="rsvp-textarea" name="mensaje" placeholder="Escríbeles algo especial..."></textarea>
     </div>
 
     <button type="submit" class="rsvp-btn">Confirmar asistencia</button>
