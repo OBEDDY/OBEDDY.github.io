@@ -30,7 +30,7 @@ body {
   height: 100vh;
   height: 100svh;
   min-height: 600px;
-  background: var(--vino-deep);
+  background: var(--marfil-dark);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -283,7 +283,7 @@ section { padding: 6rem 2rem; }
 }
 
 /* ── FOTO DUO ── */
-.foto-section { background: var(--marfil); padding: 0; }
+.foto-section { background: var(--marfil-dark); padding: 0; }
 
 .foto-duo {
   display: grid;
@@ -292,7 +292,7 @@ section { padding: 6rem 2rem; }
 }
 
 .foto-placeholder {
-  background: var(--vino-deep);
+  background: var(--marfil-dark);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -316,11 +316,11 @@ section { padding: 6rem 2rem; }
 }
 
 .foto-placeholder-b {
-  background: linear-gradient(135deg, #3A0810, #6B1525);
+  background: var(--marfil-dark);
 }
 
 /* ── HISTORIA ── */
-.historia-section { background: var(--marfil); }
+.historia-section { background: var(--marfil-dark); }
 
 .historia-timeline {
   display: grid;
