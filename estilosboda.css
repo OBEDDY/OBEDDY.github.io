@@ -309,7 +309,7 @@ section { padding: 6rem 2rem; }
 
 .foto-placeholder::after {
   content: '';
-  position: absolute;
+  position: center;
   inset: 16px;
   border: 1px solid rgba(201,168,76,0.2);
   pointer-events: none;
