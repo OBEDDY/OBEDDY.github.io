@@ -5,16 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Zurisadai & Obed • 29 Nov 2026</title>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="estilosboda.css">
+  <link rel="stylesheet" href="estilos2.css">
 </head>
 <body>
 
 <!-- ── HERO ── -->
 <section class="hero">
   <div class="hero-photo-placeholder">
-    <!-- 🖼️ REEMPLAZA CON:
-    <img src="foto-principal.jpg" style="width:100%;height:100%;object-fit:cover;filter:brightness(0.7)">
-    -->
+  
+    <img src="foto1.jpg" style="width:100%;height:100%;object-fit:cover;filter:brightness(0.7)">
+ 
   </div>
 
   <svg class="hero-botanical" viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg">
@@ -68,10 +68,12 @@
 
 <!-- ── CUENTA REGRESIVA ── -->
 <section class="countdown-section">
+
   <div class="section-inner reveal">
-    <span class="section-eyebrow">Faltan</span>
+
     <h2 class="section-title">El gran día se acerca</h2>
-    <div class="divider" style="background:rgba(255,255,255,0.2)"></div>
+      <span class="section-eyebrow">Faltan</span>
+    <div class="divider" style="background:rgba(255, 0, 0, 0.2)"></div>
     <div class="countdown-grid">
       <div class="countdown-item">
         <span class="countdown-num" id="cd-dias">--</span>
@@ -115,7 +117,7 @@
         </svg>
         <span class="detalle-titulo">Fecha</span>
         <span class="detalle-valor">Domingo 29 de Noviembre</span>
-        <p class="detalle-sub">2026</p>
+        <p class="detalle-valor">2026</p>
       </div>
 
       <div class="detalle-card reveal">
@@ -142,7 +144,64 @@
 Calle 32 A #309
 35 metros de la carretera 46
 31650 San Guillermo (Santa Elena), Chih.<br> <br>Salon de eventos mariana bonita: <br>Sierra de Pedernales 10602, Sierra Azul, 31384 Chihuahua, Chih.</p>
-      </div>
+    </div>
+
+
+        <!-- ── DETALLES vestimenta ── -->
+       
+      <div class="detalle-card reveal" id="vestimenta">
+        <span class="detalle-titulo"><br><br>Código de vestimenta</span>
+        <span class="detalle-valor">Formal</span>
+
+        <div class="vestimenta-iconos">
+    <!-- Traje hombre -->
+    <svg width="80" height="110" viewBox="0 0 80 110" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- Cabeza -->
+      <circle cx="40" cy="12" r="10" fill="#2C2C2C"/>
+      <!-- Cuello corbata -->
+      <polygon points="40,22 36,32 40,38 44,32" fill="#58111A"/>
+      <!-- Saco izquierda -->
+      <path d="M20,30 Q15,35 12,70 L35,70 L35,30 Q30,28 25,30 Z" fill="#1A1A1A"/>
+      <!-- Saco derecha -->
+      <path d="M60,30 Q65,35 68,70 L45,70 L45,30 Q50,28 55,30 Z" fill="#1A1A1A"/>
+      <!-- Camisa blanca centro -->
+      <rect x="35" y="30" width="10" height="40" fill="#FDFBF7"/>
+      <!-- Pantalón -->
+      <rect x="25" y="70" width="12" height="38" rx="2" fill="#1A1A1A"/>
+      <rect x="43" y="70" width="12" height="38" rx="2" fill="#1A1A1A"/>
+      <!-- Botones -->
+      <circle cx="40" cy="42" r="1.2" fill="#C9A84C"/>
+      <circle cx="40" cy="50" r="1.2" fill="#C9A84C"/>
+      <circle cx="40" cy="58" r="1.2" fill="#C9A84C"/>
+    </svg>
+
+     <!-- Separador -->
+    <span class="vestimenta-amp">&</span>
+
+    <!-- Vestido mujer -->
+    <svg width="70" height="110" viewBox="0 0 70 110" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- Cabeza -->
+      <circle cx="35" cy="12" r="10" fill="#2C2C2C"/>
+      <!-- Cuello -->
+      <rect x="30" y="22" width="10" height="8" fill="#1A1A1A"/>
+      <!-- Parte superior vestido -->
+      <path d="M22,30 Q20,28 18,30 L20,58 L50,58 L52,30 Q50,28 48,30 Q42,26 35,26 Q28,26 22,30 Z" fill="#1A1A1A"/>
+      <!-- Falda larga -->
+      <path d="M20,58 Q14,75 10,108 L60,108 Q56,75 50,58 Z" fill="#1A1A1A"/>
+      <!-- Detalle escote -->
+      <path d="M28,30 Q35,36 42,30" stroke="#3A3A3A" stroke-width="1" fill="none"/>
+    </svg>
+  </div>
+
+
+    <div class="vestimenta-texto">
+    <p class="vestimenta-cita">
+      "…Deben vestir con ropa apropiada y arreglarse con modestia y buen juicio"
+    </p>
+    <p class="vestimenta-referencia">(1 Timoteo 2:9)</p>
+  </div>
+</div>
+
 
     </div>
   </div>
@@ -152,15 +211,15 @@ Calle 32 A #309
 <!-- ── FOTO DUO ── -->
 <div class="foto-section">
   <div class="foto-duo">
-    <div class="foto-placeholder">
+    <div class="foto-frame">
  <img src="foto1.jpg" style="width:100%;height:100%;object-fit:cover"> 
-      Foto de los novios 1
-      <span class="galeria-add-btn">Agrega tu foto</span>
+    
+      <span class="galeria-add-btn"></span>
     </div>
-    <div class="foto-placeholder foto-placeholder-b">
+    <div class="foto-frame">
      <img src="foto2.jpg" style="width:100%;height:100%;object-fit:cover"> 
-      Foto de los novios 2
-      <span class="galeria-add-btn">Agrega tu foto</span>
+ 
+      <span class="galeria-add-btn"></span>
     </div>
   </div>
 </div>
@@ -172,7 +231,8 @@ Calle 32 A #309
     <span class="section-eyebrow">Nuestra historia</span>
     <h2 class="section-title">El camino hasta el altar</h2>
     <div class="divider"></div>
-    <p class="body-text">Cada historia de amor tiene sus propios momentos especiales. Aquí compartimos los nuestros.</p>
+    <p class="body-text">        <p class="historia-desc">"Me comprometeré a ser tu esposo para siempre; me comprometeré en rectitud y justicia, en amor leal y misericordia." (Oseas 2:19).</p>
+</p>
   </div>
 
   <div class="historia-timeline reveal">
@@ -222,29 +282,57 @@ Calle 32 A #309
     <div class="divider"></div>
   </div>
 
-  <div class="galeria-grid reveal">
-    <div class="galeria-item large">
-      Foto principal <span class="galeria-add-btn">Agrega tu foto</span>ting in t
-<img src="foto3.jpg" alt="Young couple dressed formally smiling and looking at each other while standing outdoors at night under palm trees with a red wall and soft lighhe background; affectionate and joyful mood; no visible text" style="width: 55px%;height:-90%;object-fit:cover;margin-top:1px;margin-left:-60px; margin-right:1px;margin-bottom:1px;">
+ <div class="galeria-grid">
+  <!-- Ítem Grande -->
+  <div class="galeria-item large">
+    <img src="foto1.jpg" alt="Momento especial 1">
+    <div class="galeria-overlay">
 
-    </div>
-    <div class="galeria-item">
-      Foto 2 <span class="galeria-add-btn">Agrega tu foto</span>
-    </div>
-    <div class="galeria-item">
-      Foto 3 <span class="galeria-add-btn">Agrega tu foto</span>
-    </div>
-    <div class="galeria-item">
-      Foto 4 <span class="galeria-add-btn">Agrega tu foto</span>
-    </div>
-    <div class="galeria-item large">
-      Foto 5 <span class="galeria-add-btn">Agrega tu foto</span>
     </div>
   </div>
 
+
+  <!-- Ítem Estándar -->
+  <div class="galeria-item">
+    <img src="foto2.jpg" alt="Momento especial 2">
+    <div class="galeria-overlay">
+
+    </div>
+  </div>
+
+  <div class="galeria-item">
+    <img src="foto3.jpg" alt="Momento especial 3">
+    <div class="galeria-overlay">
+
+    </div>
+  </div>
+
+
+  <div class="galeria-item">
+    <img src="foto4.jpg" alt="Momento especial 4">
+    <div class="galeria-overlay">
+
+    </div>
+  </div>
+  <div class="galeria-item">
+    <img src="foto5.jpg" alt="Momento especial 4">
+    <div class="galeria-overlay">
+  
+    </div>
+  </div>
+
+  <!-- Otro Ítem Grande -->
+  <div class="galeria-item large">
+    <img src="foto5.jpg" alt="Momento especial 5">
+    <div class="galeria-overlay">
+     
+    </div>
+  </div>
+</div>
+
+
   <p class="galeria-note">Las fotos se agregarán pronto ♥</p>
 </section>
-
 
 <!-- ── RSVP ── -->
 <section class="rsvp-section">
@@ -308,6 +396,6 @@ Calle 32 A #309
   <p class="footer-copy">Con amor, los esperamos ♥</p>
 </footer>
 
-<script src="funcion.js"></script>
+<script src="funcion2.js"></script>
 </body>
 </html>

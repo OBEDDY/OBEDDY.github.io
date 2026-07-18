@@ -44,6 +44,8 @@ body {
   inset: 0;
   pointer-events: none;
   opacity: 0.18;
+ 
+
 }
 
 .hero-photo-placeholder {
@@ -56,7 +58,7 @@ body {
   position: absolute;
   inset: 0;
   background: linear-gradient(to bottom,
-    rgba(58,8,16,0.3) 0%,
+    #4907074d 0%,
     rgba(58,8,16,0.1) 40%,
     rgba(58,8,16,0.6) 100%);
 }
@@ -157,6 +159,7 @@ section { padding: 6rem 2rem; }
   max-width: 780px;
   margin: 0 auto;
   text-align: center;
+ 
 }
 
 .section-eyebrow {
@@ -195,9 +198,10 @@ section { padding: 6rem 2rem; }
 
 /* ── COUNTDOWN ── */
 .countdown-section {
-  background: var(--vino);
-  color: var(--blanco);
+
+
   padding: 5rem 2rem;
+background: linear-gradient(160deg, #3A0810 0%, #58111A 30%, #3A0810 70%, #3A0810 100%);
 }
 
 .countdown-section .section-title { color: var(--blanco); }
@@ -229,6 +233,7 @@ section { padding: 6rem 2rem; }
   margin-top: 0.5rem;
   display: block;
 }
+
 
 .countdown-sep {
   font-family: var(--display);
@@ -282,14 +287,135 @@ section { padding: 6rem 2rem; }
   line-height: 1.5;
 }
 
+/* ── CÓDIGO DE VESTIMENTA ── */
+#vestimenta {
+  background: var(--marfil-dark);
+  border: 0px solid rgba(0, 0, 0, 0.12);
+  border-radius: 8px;
+  padding: 2.5rem 2rem;
+}
+
+#vestimenta .detalle-titulo {
+  font-size: 0.65rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gris-soft);
+  display: block;
+  margin-bottom: 0.3rem;
+}
+
+#vestimenta .detalle-valor {
+  font-family: var(--display);
+  font-size: 2rem;
+  font-style: italic;
+  color: var(--vino);
+  display: block;
+  margin-bottom: 1.5rem;
+}
+
+.vestimenta-iconos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.vestimenta-amp {
+  font-family: var(--display);
+  font-size: 2rem;
+  font-style: italic;
+  color: var(--oro);
+  line-height: 1;
+}
+
+.vestimenta-texto {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(88, 17, 26, 0.1);
+}
+
+.vestimenta-cita {
+  font-family: var(--display);
+  font-size: 1rem;
+  font-style: italic;
+  color: var(--gris);
+  line-height: 1.7;
+  margin-bottom: 0.5rem;
+}
+
+.vestimenta-referencia {
+  font-size: 0.75rem;
+  color: var(--gris-soft);
+  letter-spacing: 0.05em;
+}
+
+
 /* ── FOTO DUO ── */
 .foto-section { background: var(--marfil-dark); padding: 0; }
 
 .foto-duo {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  height: 520px;
+  place-items: center;   /* centra el marco dentro de la celda */
+  gap: 24px;
+  padding: 20px;
 }
+
+.foto-frame {
+  position: relative;
+  padding: 14px;
+  background: linear-gradient(135deg, #d4af37, #fbf5b7, #b8860b, #fcf6ba, #d4af37);
+  border-radius: 6px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+
+  /* clave: limita el tamaño en pantallas grandes */
+  width: 100%;
+  max-width: 380px;      /* ajusta este valor a tu gusto */
+  aspect-ratio: 4 / 5;   /* controla la proporción del marco, no solo la imagen */
+}
+
+.foto-frame img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;     /* la imagen se recorta bonito sin deformarse */
+  border: 2px solid #fff8dc;
+}
+
+.foto-frame::before {
+  content: "";
+  position: absolute;
+  inset: 4px;
+  border: 1px solid rgba(255,255,255,0.5);
+  border-radius: 4px;
+  pointer-events: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .foto-placeholder {
   background: var(--marfil-dark);
@@ -392,22 +518,21 @@ section { padding: 6rem 2rem; }
 .galeria-section .section-title  { color: var(--blanco); }
 .galeria-section .section-eyebrow { color: var(--oro); }
 .galeria-section .divider        { background: var(--oro); }
-
+/* MÓVIL: una columna, todos los ítems iguales */
 .galeria-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 220px 220px;
-  gap: 10px;
-  margin-top: 3rem;
-  max-width: 900px;
-  margin-left: auto;
-  margin-right: auto;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  padding: 15px;
+  max-width: 1100px;
+  margin: 0 auto;
 }
-
 .galeria-item {
+  height: 250px;           /* altura fija — sin aspect-ratio */
   background: var(--vino-light);
-  border-radius: 2px;
+  border-radius: 8px;
   overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -419,9 +544,58 @@ section { padding: 6rem 2rem; }
   cursor: pointer;
   transition: transform 0.3s ease;
 }
-
 .galeria-item:hover { transform: scale(1.02); }
-.galeria-item.large { grid-column: span 2; }
+.galeria-item img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.galeria-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  pointer-events: none;
+}
+/* DESKTOP: 3 columnas, posición exacta para cada foto */
+@media (min-width: 768px) {
+  .galeria-grid {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 200px);
+  }
+  /* El grid controla la altura en desktop */
+  .galeria-item { height: auto; }
+  /* foto1 → grande arriba-izquierda */
+  .galeria-item:nth-child(1) { grid-column: 1 / 3; grid-row: 1 / 3; }
+  /* foto2 → pequeña arriba-derecha fila 1 */
+  .galeria-item:nth-child(2) { grid-column: 3;     grid-row: 1;     }
+  /* foto3 → pequeña arriba-derecha fila 2 */
+  .galeria-item:nth-child(3) { grid-column: 3;     grid-row: 2;     }
+  /* foto4 → pequeña abajo-izquierda fila 3 */
+  .galeria-item:nth-child(4) { grid-column: 1;     grid-row: 3;     }
+  /* foto5 → pequeña abajo-izquierda fila 4 */
+  .galeria-item:nth-child(5) { grid-column: 1;     grid-row: 4;     }
+  /* foto6 → grande abajo-derecha (espejo de foto1) */
+  .galeria-item:nth-child(6) { grid-column: 2 / 4; grid-row: 3 / 5; }
+}
+/* --- SOLUCIÓN RESPONSIVA PARA ELEMENTOS GRANDES --- 
+.galeria-item.large {
+  grid-column: span 1;
+  grid-row: span 1;
+}
+
+@media (min-width: 768px) {
+  .galeria-item.large { 
+    grid-column: span 2; 
+    grid-row: span 2; 
+    aspect-ratio: auto; 
+  }
+}
+
 
 .galeria-add-btn {
   position: absolute;
@@ -435,7 +609,7 @@ section { padding: 6rem 2rem; }
   text-transform: uppercase;
   padding: 4px 8px;
   border-radius: 2px;
-  pointer-events: none;
+  pointer-events: none; 
 }
 
 .galeria-note {
@@ -446,7 +620,7 @@ section { padding: 6rem 2rem; }
   letter-spacing: 0.1em;
 }
 
-/* ── RSVP ── */
+*/
 .rsvp-section { background: var(--marfil-dark); }
 
 .rsvp-form {
