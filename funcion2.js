@@ -64,3 +64,45 @@ document.querySelector('#rsvp-success').addEventListener('click', function() {
   document.querySelector('#rsvp-form').reset();
   document.querySelectorAll('.rsvp-radio').forEach(r => r.classList.remove('selected'));
 });
+
+// ── RSVP — envío a Google Sheets ──
+const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyfTmXs264F8MyqR9ao6dvs5pJeZjkgoSdN1H2wX4xU82_qN2F4IhyI_abuZU5WeraO/exec';
+// ↑ Reemplaza con tu URL real del paso 3
+
+document.querySelector('#rsvp-form').addEventListener('submit', function(e) {
+  e.preventDefault();
+
+  const btn = document.querySelector('.rsvp-btn');
+  btn.textContent = 'Enviando...';
+  btn.disabled = true;
+
+  // Recoger todos los datos del formulario
+  const datos = {
+    nombre:        document.querySelector('input[name="nombre"]').value,
+    acompanantes:  document.querySelector('select[name="acompanantes"]').value,
+    asistencia:    document.querySelector('input[name="asistencia"]:checked')?.value || 'No indicado',
+    mensaje:       document.querySelector('textarea[name="mensaje"]').value
+  };
+
+  fetch(SCRIPT_URL, {
+    method: 'POST',
+    body: JSON.stringify(datos)
+  })
+  .then(response => response.json())
+  .then(data => {
+    if (data.resultado === 'ok') {
+      // ✅ Mostrar mensaje de éxito
+      document.querySelector('#rsvp-form').style.display = 'none';
+      document.querySelector('#rsvp-success').style.display = 'block';
+    } else {
+      btn.textContent = 'Confirmar asistencia';
+      btn.disabled = false;
+      alert('Hubo un error. Por favor intenta de nuevo.');
+    }
+  })
+  .catch(() => {
+    btn.textContent = 'Confirmar asistencia';
+    btn.disabled = false;
+    alert('Sin conexión. Por favor intenta de nuevo.');
+  });
+});
