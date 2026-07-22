@@ -52,51 +52,15 @@ document.querySelectorAll('.rsvp-radio').forEach(el => {
 
 
 // ── RSVP SUBMIT ──
-const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyfTmXs264F8MyqR9ao6dvs5pJeZjkgoSdN1H2wX4xU82_qN2F4IhyI_abuZU5WeraO/exec';
-
 document.querySelector('#rsvp-form').addEventListener('submit', function(e) {
   e.preventDefault();
-
-  const btn = document.querySelector('.rsvp-btn');
-  btn.textContent = 'Enviando...';
-  btn.disabled = true;
-
-  const datos = {
-    nombre:        document.querySelector('input[name="nombre"]').value,
-    acompanantes:  document.querySelector('select[name="acompanantes"]').value,
-    asistencia:    document.querySelector('input[name="asistencia"]:checked')?.value || 'No indicado',
-    mensaje:       document.querySelector('textarea[name="mensaje"]').value
-  };
-
-  fetch(SCRIPT_URL, {
-    method: 'POST',
-    body: JSON.stringify(datos)
-  })
-  .then(response => response.json())
-  .then(data => {
-    if (data.resultado === 'ok') {
-      document.querySelector('#rsvp-form').style.display = 'none';
-      document.querySelector('#rsvp-success').style.display = 'block';
-    } else {
-      btn.textContent = 'Confirmar asistencia';
-      btn.disabled = false;
-      alert('Hubo un error. Por favor intenta de nuevo.');
-    }
-  })
-  .catch(() => {
-    btn.textContent = 'Confirmar asistencia';
-    btn.disabled = false;
-    alert('Sin conexión. Por favor intenta de nuevo.');
-  });
+  this.style.display = 'none';
+  document.querySelector('#rsvp-success').style.display = 'block';
 });
 
 document.querySelector('#rsvp-success').addEventListener('click', function() {
-  const form = document.querySelector('#rsvp-form');
-  const btn = document.querySelector('.rsvp-btn');
   this.style.display = 'none';
-  form.style.display = 'grid';
-  form.reset();
-  btn.textContent = 'Confirmar asistencia';
-  btn.disabled = false;
+  document.querySelector('#rsvp-form').style.display = 'grid';
+  document.querySelector('#rsvp-form').reset();
   document.querySelectorAll('.rsvp-radio').forEach(r => r.classList.remove('selected'));
 });

@@ -290,7 +290,7 @@ background: linear-gradient(160deg, #3A0810 0%, #58111A 30%, #3A0810 70%, #3A081
 /* ── CÓDIGO DE VESTIMENTA ── */
 #vestimenta {
   background: var(--marfil-dark);
-  border: none;
+  border: 0px solid rgba(0, 0, 0, 0.12);
   border-radius: 8px;
   padding: 2.5rem 2rem;
 }
@@ -392,7 +392,10 @@ background: linear-gradient(160deg, #3A0810 0%, #58111A 30%, #3A0810 70%, #3A081
   pointer-events: none;
 }
 
-.foto-placeholder {
+
+
+
+
 
 
 
@@ -432,7 +435,7 @@ background: linear-gradient(160deg, #3A0810 0%, #58111A 30%, #3A0810 70%, #3A081
 
 .foto-placeholder::after {
   content: '';
-  position: absolute;
+  position: center;
   inset: 16px;
   border: 1px solid rgba(201,168,76,0.2);
   pointer-events: none;
@@ -579,6 +582,45 @@ background: linear-gradient(160deg, #3A0810 0%, #58111A 30%, #3A0810 70%, #3A081
   /* foto6 → grande abajo-derecha (espejo de foto1) */
   .galeria-item:nth-child(6) { grid-column: 2 / 4; grid-row: 3 / 5; }
 }
+/* --- SOLUCIÓN RESPONSIVA PARA ELEMENTOS GRANDES --- 
+.galeria-item.large {
+  grid-column: span 1;
+  grid-row: span 1;
+}
+
+@media (min-width: 768px) {
+  .galeria-item.large { 
+    grid-column: span 2; 
+    grid-row: span 2; 
+    aspect-ratio: auto; 
+  }
+}
+
+
+.galeria-add-btn {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background: rgba(201,168,76,0.15);
+  border: 1px solid rgba(201,168,76,0.4);
+  color: var(--oro);
+  font-size: 0.55rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 4px 8px;
+  border-radius: 2px;
+  pointer-events: none; 
+}
+
+.galeria-note {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.3);
+  letter-spacing: 0.1em;
+}
+
+*/
 .rsvp-section { background: var(--marfil-dark); }
 
 .rsvp-form {
@@ -758,4 +800,3 @@ html.reveal-ready .reveal { opacity: 1; transform: none; }
   .galeria-item.large     { grid-column: span 2; }
   .countdown-sep          { display: none; }
 }
-
